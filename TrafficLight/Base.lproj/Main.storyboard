@@ -12,11 +12,11 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TrafficLight" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleAspectFit" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="bxG-K4-QKn">
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="bxG-K4-QKn">
                                 <rect key="frame" x="152" y="119" width="110" height="362"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1Y-1d-KBr">
@@ -46,21 +46,24 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAG-Pe-rxx">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAG-Pe-rxx">
                                 <rect key="frame" x="132" y="730" width="150" height="66"/>
                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="R0e-lo-zYP"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="R0e-lo-zYP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="45"/>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                                 </state>
+                                <connections>
+                                    <action selector="startButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="kpb-Jp-hmk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bxG-K4-QKn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="5ik-Lj-3dA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QAG-Pe-rxx" secondAttribute="bottom" constant="66" id="idx-98-OEv"/>
@@ -68,6 +71,12 @@
                             <constraint firstItem="bxG-K4-QKn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pcR-sp-3nh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greenLightView" destination="Nb3-kS-ZbX" id="fuP-Yj-9JI"/>
+                        <outlet property="redLightView" destination="C1Y-1d-KBr" id="yN6-A1-RoH"/>
+                        <outlet property="startButton" destination="QAG-Pe-rxx" id="hmR-cR-i6W"/>
+                        <outlet property="yellowLightView" destination="hKd-yT-xKH" id="idJ-kY-kHK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
